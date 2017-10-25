@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 403693572}
   - component: {fileID: 403693570}
   - component: {fileID: 403693571}
+  - component: {fileID: 403693574}
   m_Layer: 0
   m_Name: Riverbank
   m_TagString: Untagged
@@ -286,12 +287,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403693569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5083647, y: 3.8346117, z: 0}
+  m_LocalPosition: {x: -4.5083647, y: 3.8346117, z: 100}
   m_LocalScale: {x: 25, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 414283189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403693574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 403693569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0507b5b8b5200d479679799e6b137cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414283188
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,8 +345,9 @@ GameObject:
   - component: {fileID: 493617342}
   - component: {fileID: 493617340}
   - component: {fileID: 493617341}
+  - component: {fileID: 493617344}
   m_Layer: 0
-  m_Name: Riverbank (1)
+  m_Name: 'Riverbank '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,12 +424,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 493617339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5083647, y: -5.6853886, z: 0}
+  m_LocalPosition: {x: -4.5083647, y: -5.6853886, z: 100}
   m_LocalScale: {x: 25, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 414283189}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &493617344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 493617339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0507b5b8b5200d479679799e6b137cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028336638
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +456,7 @@ GameObject:
   - component: {fileID: 2028336644}
   m_Layer: 0
   m_Name: Kayak
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
