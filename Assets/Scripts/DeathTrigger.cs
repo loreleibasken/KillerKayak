@@ -1,25 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DeathTrigger : MonoBehaviour {
+public class DeathTrigger : MonoBehaviour
+{
+
     
-	void Start () {
-		
+	void Start ()
+    {
 	}
 	
 	
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Kayak")
+        if (other.gameObject.tag == "Player")
         {
             Destroy(other.gameObject);
-
-            //Application.LoadLevel("End");
+            SceneManager.LoadScene(2);
         }
     }
 }
