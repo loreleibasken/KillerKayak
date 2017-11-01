@@ -9,9 +9,12 @@ public class Movement : MonoBehaviour
     public float shieldFlashTime = 0.1f;
     public float shieldPowerUpTime = 2f;
     public Text scoreText;
+    public AudioClip pickupClip;
+    public AudioClip powerUpClip;
 
     Rigidbody2D rigidBody;
     SpriteRenderer spriteRenderer;
+    AudioSource audioSource;
     float shieldTimeLeft = 0;
     int score = 0;
 
@@ -19,6 +22,7 @@ public class Movement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine("FlashShip"); // flash ship if shield is active
         UpdateScore();
     }
@@ -42,6 +46,7 @@ public class Movement : MonoBehaviour
     {
         if (other.tag == "Powerup")
         {
+            audioSource.PlayOneShot(powerUpClip);
             Destroy(other.gameObject);
             // add some time to the shield
             shieldTimeLeft += shieldPowerUpTime;
@@ -87,6 +92,10 @@ public class Movement : MonoBehaviour
         else
         {
             score += 1;
+        }
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(pickupClip);
         }
         UpdateScore();
     }

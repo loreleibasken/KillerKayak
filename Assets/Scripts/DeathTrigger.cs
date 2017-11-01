@@ -4,19 +4,23 @@ using UnityEngine.SceneManagement;
 public class DeathTrigger : MonoBehaviour
 {
 
+    public AudioClip deathClip;
+
     Movement movement;
+    AudioSource audioSource;
 
 	void Start()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         movement = playerObject.GetComponent<Movement>();
+        audioSource = GetComponent<AudioSource>();
 	}
 
     void Update()
     {
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -30,14 +34,15 @@ public class DeathTrigger : MonoBehaviour
             }
             else
             {
-                PlayerDie(other.gameObject);
+                audioSource.PlayOneShot(deathClip);
+                Destroy(other.gameObject);
+                Invoke("PlayerDie", 2f);
             }
         }
     }
 
-    void PlayerDie(GameObject obstacle)
+    void PlayerDie()
     {
-        Destroy(obstacle);
         SceneManager.LoadScene(2);
     }
 

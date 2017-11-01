@@ -33,7 +33,7 @@ public class Creator : MonoBehaviour
 
     void CreateObstacle()
     {
-        if (prefabs.Count > 0)
+        if (prefabs.Count > 0 && GameObject.FindGameObjectWithTag("Player") != null)
         {
             int obstacleIndex = Random.Range(0, prefabs.Count);
             GameObject gameObject = (GameObject)Instantiate(prefabs[obstacleIndex]);
